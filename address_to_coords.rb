@@ -1,6 +1,12 @@
 require 'open-uri'
 require 'json'
 
+# If you experience an error relating to SSL,
+#   uncomment the following two lines:
+
+# require 'openssl'
+# OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+
 puts "What is the address you would like to find the latitude and longitude of?"
 
 # Gets a string from the user and chomps off the carriage return at the end

@@ -1,6 +1,12 @@
 require 'open-uri'
 require 'json'
 
+# If you experience an error relating to SSL,
+#   uncomment the following two lines:
+
+# require 'openssl'
+# OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+
 puts "Let's get the weather forecast for your location."
 
 puts "What is the latitude?"
