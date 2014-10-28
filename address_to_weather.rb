@@ -7,13 +7,6 @@ require 'json'
 require 'openssl'
 OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
-# Paste API key here if it changes for some reason.
-api_key = "e937af7b7f9792ee1b197a54684d46e2"+"/"
-forecast_io_api_url = "https://api.forecast.io/forecast/"
-
-# Create the api address with the API key included.
-forecast_io_api_w_key = forecast_io_api_url + api_key
-
 puts "Let's get the weather forecast for your address."
 
 puts "What is the address you would like to know the weather for?"
@@ -22,8 +15,14 @@ url_safe_address = URI.encode(the_address)
 
 # Your code goes below.
 
-# Pass the address to the google geocoder API using address_to_coords.rb
+# Paste forecast.io API key here if it changes for some reason.
+api_key = "e937af7b7f9792ee1b197a54684d46e2"+"/"
+forecast_io_api_url = "https://api.forecast.io/forecast/"
 
+# Create the api address with the API key included.
+forecast_io_api_w_key = forecast_io_api_url + api_key
+
+# Pass the address to the google geocoder API
 maps_api_base_address = "http://maps.googleapis.com/maps/api/geocode/json?address="
 maps_api_request_address = maps_api_base_address+url_safe_address
 
