@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'json'
+require './address_to_coords.rb'
 
 # If you experience an error relating to SSL,
 #   uncomment the following two lines:
