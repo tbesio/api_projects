@@ -21,19 +21,12 @@ maps_api_request_address = maps_api_base_address+url_safe_address
 
 parsed_maps_result = JSON.parse(open(maps_api_request_address).read)
 maps_address_result = parsed_maps_result["results"][0]
-address_result_lat = maps_address_result["geometry"]["location"]["lat"]
-address_result_lon = maps_address_result["geometry"]["location"]["lon"]
-
-# raw_data = ???
-# parsed_data = ???
-
-# ...
 
 # Let's store the latitude in a variable called 'the_latitude',
 #   and the longitude in a variable called 'the_longitude'.
 
-# the_latitude = ???
-# the_longitude = ???
+the_latitude = maps_address_result["geometry"]["location"]["lat"]
+the_longitude = maps_address_result["geometry"]["location"]["lon"]
 
 # Ultimately, we want the following line to work when uncommented:
 
