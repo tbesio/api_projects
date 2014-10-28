@@ -7,13 +7,6 @@ require 'json'
 require 'openssl'
 OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
-# Paste API key here if it changes for some reason.
-api_key = "e937af7b7f9792ee1b197a54684d46e2"+"/"
-forecast_io_api_url = "https://api.forecast.io/forecast/"
-
-# Create the api address with the API key included.
-forecast_io_api_w_key = forecast_io_api_url + api_key
-
 puts "Let's get the weather forecast for your location."
 
 puts "What is the latitude?"
@@ -25,6 +18,13 @@ the_longitude = gets.chomp
 # Your code goes below. Use the same approach as you did in
 #   address_to_coords.rb to read from a remote API and parse
 #   the results.
+
+# Paste API key here if it changes for some reason.
+api_key = "e937af7b7f9792ee1b197a54684d46e2"+"/"
+forecast_io_api_url = "https://api.forecast.io/forecast/"
+
+# Create the api address with the API key included.
+forecast_io_api_w_key = forecast_io_api_url + api_key
 
 # Create a url with the LAT/LON pair included.
 api_call_url = forecast_io_api_w_key + the_latitude + "," + the_longitude
