@@ -1,6 +1,5 @@
 require 'open-uri'
 require 'json'
-require './address_to_coords.rb'
 
 # If you experience an error relating to SSL,
 #   uncomment the following two lines:
@@ -38,7 +37,7 @@ the_latitude = maps_address_result["geometry"]["location"]["lat"]
 the_longitude = maps_address_result["geometry"]["location"]["lng"]
 
 # Create a url to pass to forecast.io API with the LAT/LON pair included.
-api_call_url = forecast_io_api_w_key + the_latitude + "," + the_longitude
+api_call_url = forecast_io_api_w_key + the_latitude.to_s + "," + the_longitude.to_s
 
 # Send a call to the server for forecast data at the LAT/LON pair. Store the result as api_call_result.
 api_call_result = JSON.parse(open(api_call_url).read)
