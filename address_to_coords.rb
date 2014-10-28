@@ -16,8 +16,14 @@ the_address = gets.chomp
 url_safe_address = URI.encode(the_address)
 
 # Your code goes below. Hints:
+maps_api_base_address = "http://maps.googleapis.com/maps/api/geocode/json?address="
+maps_api_request_address = maps_api_base_address+url_safe_address
 
-# url_of_data_we_want = "???"
+parsed_maps_result = JSON.parse(open(maps_api_request_address).read)
+maps_address_result = parsed_maps_result["results"][0]
+address_result_lat = maps_address_result["geometry"]["location"]["lat"]
+address_result_lon = maps_address_result["geometry"]["location"]["lon"]
+
 # raw_data = ???
 # parsed_data = ???
 
