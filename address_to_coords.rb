@@ -26,8 +26,8 @@ maps_address_result = parsed_maps_result["results"][0]
 #   and the longitude in a variable called 'the_longitude'.
 
 the_latitude = maps_address_result["geometry"]["location"]["lat"]
-the_longitude = maps_address_result["geometry"]["location"]["lon"]
+the_longitude = maps_address_result["geometry"]["location"]["lng"]
 
 # Ultimately, we want the following line to work when uncommented:
 
-# puts "The latitude of #{the_address} is #{the_latitude} and the longitude is #{the_longitude}."
+puts "The latitude of #{the_address} is #{the_latitude} and the longitude is #{the_longitude}."
